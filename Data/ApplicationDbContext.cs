@@ -27,6 +27,8 @@ public class ApplicationDbContext : DbContext
         UserSeeder.Seed(modelBuilder);
         DoctorSeeder.SeedDoctors(modelBuilder);
         PatientSeeder.SeedPatients(modelBuilder);
+        AppointmentSeeder.SeedAppointments(modelBuilder);
+        AvailabilitySeeder.SeedAvailabilities(modelBuilder);
 
     }
 }
