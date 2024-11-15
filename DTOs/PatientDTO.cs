@@ -9,6 +9,6 @@ public class PatientDTO
 {
      public int UserId { get; set; }
     public DateTime DateOfBirth { get; set; }
-    public string MedicalHistory { get; set; }
+    public required string MedicalHistory { get; set; }
 
 }
