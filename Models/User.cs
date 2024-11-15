@@ -26,6 +26,7 @@ public class User
     [Column("phone")]
     public string Role { get; set; }
 
+
     public User()
     {  
     }

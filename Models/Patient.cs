@@ -8,30 +8,29 @@ using System.Threading.Tasks;
 
 namespace AssessmentRiwi.Models;
 
-[Table("doctors")]
-public class Doctor
+[Table("patients")]
+public class Patient
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("id")]
 
-     public int Id { get; set; }
-
+     public int Id { get; set; }  
     [Column("user_id")]
     [ForeignKey("UserId")]
     public int UserId { get; set; }
+    [Column("date_of_birth")]     
+    public DateTime DateOfBirth { get; set; } 
+    [Column("medical_history")] 
+    public string MedicalHistory { get; set; }  
+   
     public User User { get; set; } 
-    [Column("specialty")]
-    public string Specialty { get; set; } 
-    [Column("office_hours")]
-    public string OfficeHours { get; set; }
+    [JsonIgnore] 
+    public ICollection<Appointment> Appointments { get; set; }  
 
-    [JsonIgnore]
-    public ICollection<Appointment> Appointments { get; set; } 
-    // public ICollection<Availability> Availabilities { get; set; } 
-
-    public Doctor()
+    public Patient()
     {
     }
+
 
 }
