@@ -14,7 +14,6 @@ public class Patient
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("id")]
-
      public int Id { get; set; }  
     [Column("user_id")]
     [ForeignKey("UserId")]

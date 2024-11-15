@@ -28,7 +28,8 @@ public class Doctor
 
     [JsonIgnore]
     public ICollection<Appointment> Appointments { get; set; } 
-    // public ICollection<Availability> Availabilities { get; set; } 
+    [JsonIgnore]
+    public ICollection<Availability> Availabilities { get; set; } 
 
     public Doctor()
     {

@@ -23,8 +23,11 @@ public class User
     public string Password { get; set; }
     [Column("email")]
     public string Email { get; set; }
-    [Column("phone")]
+    [Column("role")]
     public string Role { get; set; }
+
+    public  Doctor Doctor { get; set; }
+    public  Patient Patient { get; set; }
 
 
     public User()

@@ -10,7 +10,7 @@ namespace AssessmentRiwi.Repositories;
 
 public class PatientRepository : IPatientRepository
 {
-     private readonly ApplicationDbContext _context;
+    private readonly ApplicationDbContext _context;
 
     public PatientRepository(ApplicationDbContext context)
     {
@@ -20,14 +20,14 @@ public class PatientRepository : IPatientRepository
     public async Task<Patient> GetByIdAsync(int patientId)
     {
         return await _context.Patients
-            .Include(p => p.User)   
+            .Include(p => p.User)  
             .FirstOrDefaultAsync(p => p.Id == patientId);
     }
 
     public async Task<IEnumerable<Patient>> GetAllAsync()
     {
         return await _context.Patients
-            .Include(p => p.User)  
+            .Include(p => p.User)
             .ToListAsync();
     }
 

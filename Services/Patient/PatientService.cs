@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AssessmentRiwi.DTOs;
+using AssessmentRiwi.Models;
 using AssessmentRiwi.Repositories;
-using AssessmentRiwi.Services.Patient;
 
 
 namespace AssessmentRiwi.Services;
@@ -21,11 +21,7 @@ public class PatientService : IPatientService
     public async Task<PatientDTO> GetByIdAsync(int patientId)
     {
         var patient = await _patientRepository.GetByIdAsync(patientId);
-
-        if (patient == null)
-        {
-            return null; 
-        }
+        if (patient == null) return null;
 
         return new PatientDTO
         {
@@ -38,7 +34,6 @@ public class PatientService : IPatientService
     public async Task<IEnumerable<PatientDTO>> GetAllAsync()
     {
         var patients = await _patientRepository.GetAllAsync();
-
         return patients.Select(p => new PatientDTO
         {
             UserId = p.UserId,
@@ -70,10 +65,7 @@ public class PatientService : IPatientService
     {
         var patient = await _patientRepository.GetByIdAsync(patientId);
 
-        if (patient == null)
-        {
-            return null; 
-        }
+        if (patient == null) return null;
 
         patient.UserId = patientDto.UserId;
         patient.DateOfBirth = patientDto.DateOfBirth;
