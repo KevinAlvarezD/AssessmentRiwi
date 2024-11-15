@@ -15,4 +15,8 @@ public class Doctor
     // public ICollection<Appointment> Appointments { get; set; } 
     // public ICollection<Availability> Availabilities { get; set; } 
 
+    public Doctor()
+    {
+    }
+
 }
