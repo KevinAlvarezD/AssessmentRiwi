@@ -22,7 +22,7 @@ public class AppointmentRepository : IAppointmentRepository
         return await _context.Appointments
             .Include(a => a.Patient) 
             .Include(a => a.Doctor)   
-            .FirstOrDefaultAsync(a => a.AppointmentId == appointmentId);
+            .FirstOrDefaultAsync(a => a.Id == appointmentId);
     }
 
     public async Task<IEnumerable<Appointment>> GetAllAsync()

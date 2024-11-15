@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AssessmentRiwi.DTOs;
 
-namespace AssessmentRiwi.Services.Patient;
+namespace AssessmentRiwi.Services;
 
 public interface IPatientService
 {
@@ -13,6 +13,4 @@ public interface IPatientService
     Task<PatientDTO> AddAsync(PatientDTO patientDto);
     Task<PatientDTO> UpdateAsync(int patientId, PatientDTO patientDto);
     Task DeleteAsync(int patientId);
-
-
 }

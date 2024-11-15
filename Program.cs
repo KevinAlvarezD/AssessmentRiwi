@@ -9,7 +9,6 @@ using System.Text.Json.Serialization;
 using AssessmentRiwi.Repositories;
 using AssessmentRiwiAPI.Services;
 using AssessmentRiwi.Services;
-using AssessmentRiwi.Services.Patient;
 
 var builder = WebApplication.CreateBuilder(args);
 Env.Load();
@@ -38,9 +37,12 @@ builder.Services.AddControllers()
  builder.Services.AddScoped<UserServices, UserServices>();
  builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
  builder.Services.AddScoped<IDoctorService, DoctorService>();
- builder.Services.AddScoped<IPatientRepository, PatientRepository>(); builder.Services.AddScoped<IPatientService, PatientService>();
+ builder.Services.AddScoped<IPatientRepository, PatientRepository>();
+ builder.Services.AddScoped<IPatientService, PatientService>();
  builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
-//  builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+ builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+ builder.Services.AddScoped<IAvailabilityRepository, AvailabilityRepository >();
+ builder.Services.AddScoped<IAvailabilityService, AvailabilityService>();
  
 
 
