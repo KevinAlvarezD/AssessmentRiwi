@@ -10,7 +10,7 @@ public interface IPatientService
 {
     Task<PatientDTO> GetByIdAsync(int patientId);
     Task<IEnumerable<PatientDTO>> GetAllAsync();
-    Task<PatientDTO> AddAsync(PatientDTO patientDto);
+    // Task<PatientDTO> AddAsync(PatientDTO patientDto);
     Task<PatientDTO> UpdateAsync(int patientId, PatientDTO patientDto);
     Task DeleteAsync(int patientId);
 
