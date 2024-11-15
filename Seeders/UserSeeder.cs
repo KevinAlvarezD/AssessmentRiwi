@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using AssessmentRiwi.Models;
 using AssessmentRiwi.Helpers;
 
-namespace StoreAppi.Seeders
+namespace AssessmentRiwi.Seeders
 {
     public class UserSeeder
     {
@@ -13,7 +13,8 @@ namespace StoreAppi.Seeders
                 new User
                 {   
                     Id = 5,
-                    Name = "Kevin Alvarez",
+                    Name = "Kevin ",
+                    LastName = "Alvarez Diaz",
                     Email = "kev@riwi.io",
                     Password = PasswordHasher.HashPassword("Kevin*554169"),
                     Phone = "3132145678",
@@ -23,7 +24,8 @@ namespace StoreAppi.Seeders
                 new User
                 {
                     Id = 6,
-                    Name = "Keyla Lopera",
+                    Name = "Keyla",
+                    LastName = "Mesa Lopera",
                     Email = "keyla.lopera@riwi.io",
                     Password = PasswordHasher.HashPassword("key123456"),
                     Phone = "3221234567",
