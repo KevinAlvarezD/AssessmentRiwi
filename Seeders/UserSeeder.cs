@@ -17,8 +17,6 @@ namespace AssessmentRiwi.Seeders
                     LastName = "Alvarez Diaz",
                     Email = "kev@riwi.io",
                     Password = PasswordHasher.HashPassword("Kevin*554169"),
-                    Phone = "3132145678",
-                    Address = "Cra 40 50 60",
                     Role = "admin"
                 },
                 new User
@@ -28,9 +26,7 @@ namespace AssessmentRiwi.Seeders
                     LastName = "Mesa Lopera",
                     Email = "keyla.lopera@riwi.io",
                     Password = PasswordHasher.HashPassword("key123456"),
-                    Phone = "3221234567",
-                    Address = "Cra 55 33 44",
-                    Role = "customer"
+                    Role = "doctor"
                 }
             );
         }    

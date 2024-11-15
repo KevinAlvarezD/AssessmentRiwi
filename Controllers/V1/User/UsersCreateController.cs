@@ -26,8 +26,6 @@ namespace AssessmentRiwi.Controllers.V1.Users
             {
                 Name = inputUser.Name,
                 LastName = inputUser.LastName,
-                Address = inputUser.Address,
-                Phone =  inputUser.Phone,
                 Email = inputUser.Email,
                 Password = inputUser.Password, 
                 Role = inputUser.Role 

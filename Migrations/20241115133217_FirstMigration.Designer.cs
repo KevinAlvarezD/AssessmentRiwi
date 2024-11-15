@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssessmentRiwi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241115024544_FirstMigration")]
+    [Migration("20241115133217_FirstMigration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
@@ -24,6 +24,32 @@ namespace AssessmentRiwi.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("AssessmentRiwi.Models.Doctor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("OfficeHours")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Specialty")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Doctors");
+                });
+
             modelBuilder.Entity("AssessmentRiwi.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -32,11 +58,6 @@ namespace AssessmentRiwi.Migrations
                         .HasColumnName("id");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("address");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -58,15 +79,10 @@ namespace AssessmentRiwi.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("password");
 
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("phone");
-
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("longtext")
-                        .HasColumnName("role");
+                        .HasColumnName("phone");
 
                     b.HasKey("Id");
 
@@ -76,25 +92,32 @@ namespace AssessmentRiwi.Migrations
                         new
                         {
                             Id = 5,
-                            Address = "Cra 40 50 60",
                             Email = "kev@riwi.io",
                             LastName = "Alvarez Diaz",
                             Name = "Kevin ",
-                            Password = "$2a$11$033lTf6VdhQLFaelG3cm.uwVq97xc2THrm2.LxTf1hL2abdbrXnMi",
-                            Phone = "3132145678",
+                            Password = "$2a$11$WTxy.q9QhVH6kFKwNB.3t.NzZVDNkIim1eaVlIy.dy6Yt6QZgKFBS",
                             Role = "admin"
                         },
                         new
                         {
                             Id = 6,
-                            Address = "Cra 55 33 44",
                             Email = "keyla.lopera@riwi.io",
                             LastName = "Mesa Lopera",
                             Name = "Keyla",
-                            Password = "$2a$11$9H.NHzl4XlsnoFqjAZLXDeXwDL49vxQezG8q52WM1B3Z7P5ylWAhq",
-                            Phone = "3221234567",
-                            Role = "customer"
+                            Password = "$2a$11$yr4R6NGsg9sh3cECcTT4SOJamsxZ8VzplvMiwChtZRUWlec8S8UyK",
+                            Role = "doctor"
                         });
+                });
+
+            modelBuilder.Entity("AssessmentRiwi.Models.Doctor", b =>
+                {
+                    b.HasOne("AssessmentRiwi.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }
