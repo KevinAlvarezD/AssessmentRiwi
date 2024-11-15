@@ -1,5 +1,5 @@
 using BCrypt.Net;
-namespace StoreAppi.Helpers
+namespace AssessmentRiwi.Helpers
 {
     public static class PasswordHasher
     {

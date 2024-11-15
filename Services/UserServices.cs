@@ -4,7 +4,7 @@ using AssessmentRiwi.Helpers;
 using AssessmentRiwi.Models;
 using AssessmentRiwi.Repositories;
 using Microsoft.AspNetCore.Identity;
-using StoreAppi.Helpers;
+using AssessmentRiwi.Helpers;
 
 namespace AssessmentRiwiAPI.Services
 {

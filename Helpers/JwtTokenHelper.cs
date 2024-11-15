@@ -3,7 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace StoreAppi.Helpers
+namespace AssessmentRiwi.Helpers
 {
     public static class JwtTokenHelper
     {
