@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssessmentRiwi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241115164330_SecondMigration")]
-    partial class SecondMigration
+    [Migration("20241115182929_FirstMigration")]
+    partial class FirstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -188,7 +188,7 @@ namespace AssessmentRiwi.Migrations
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("longtext")
-                        .HasColumnName("phone");
+                        .HasColumnName("role");
 
                     b.HasKey("Id");
 
@@ -201,7 +201,7 @@ namespace AssessmentRiwi.Migrations
                             Email = "kev@riwi.io",
                             LastName = "Alvarez Diaz",
                             Name = "Kevin ",
-                            Password = "$2a$11$nH7RXt8iqCFTSkakR9RNsuYcuQtVBhm0GxNDnh1BKmT9QfTz1frfS",
+                            Password = "$2a$11$GXYF4YTfcDOFLI5JQkHpGeDALjuRUkuIaPKBTkHKyIxy3nIvBy0wi",
                             Role = "admin"
                         },
                         new
@@ -210,8 +210,71 @@ namespace AssessmentRiwi.Migrations
                             Email = "keyla.lopera@riwi.io",
                             LastName = "Mesa Lopera",
                             Name = "Keyla",
-                            Password = "$2a$11$o8QZbrelN/DEJKS0v48j1udftCh3uVG9RaeulDhkXsXcrhnJsofT.",
+                            Password = "$2a$11$ZSH52T1zegdeSvbIdH0PGOKuYQXwriY7FhOTiXSZoIAlkTjR6aciS",
                             Role = "doctor"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Email = "juan.perez@riwi.io",
+                            LastName = "Perez",
+                            Name = "Juan",
+                            Password = "$2a$11$jZfzLsDtcoSoy5eyrxKW6eE93v.kjuJ2xvC2Y/MWq/a9A05djXL5S",
+                            Role = "patient"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Email = "marta.gomez@riwi.io",
+                            LastName = "Gomez",
+                            Name = "Marta",
+                            Password = "$2a$11$AqnN8NlKUjlD0tbOriOMve9reqdq2NaAjF8DnF4eEbelFO.D5bkZi",
+                            Role = "doctor"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Email = "carlos.lopez@riwi.io",
+                            LastName = "Lopez",
+                            Name = "Carlos",
+                            Password = "$2a$11$8r3GGQFEgag0a0dUzUUDd.CAz30d3meHh6sdfxIiZJcuR5vXb9H.y",
+                            Role = "patient"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Email = "ana.martinez@riwi.io",
+                            LastName = "Martinez",
+                            Name = "Ana",
+                            Password = "$2a$11$PVRxuyBNYdzOvi1mmVUxWOzizg.f5x3b5U4acW3Oj0g3vc1tR634W",
+                            Role = "doctor"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Email = "luis.ramirez@riwi.io",
+                            LastName = "Ramirez",
+                            Name = "Luis",
+                            Password = "$2a$11$2QZcm5vlijcNzJMs3cybXexZ5lwPx7Tk3ufwj/FwMtUHYsjTgHYlm",
+                            Role = "patient"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Email = "sofia.diaz@riwi.io",
+                            LastName = "Diaz",
+                            Name = "Sofia",
+                            Password = "$2a$11$Can2XsB8x/GvnHbCMszVYeIuLVDIVJOng2av8djdHzRroK.YGMSZK",
+                            Role = "doctor"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Email = "felipe.mendez@riwi.io",
+                            LastName = "Mendez",
+                            Name = "Felipe",
+                            Password = "$2a$11$kLz3VgDd.mcx3izlMiG.teCbDFO1BTrjbQeX24c4rXcm1YX9Bdmz6",
+                            Role = "patient"
                         });
                 });
 
