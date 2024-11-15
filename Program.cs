@@ -9,6 +9,7 @@ using System.Text.Json.Serialization;
 using AssessmentRiwi.Repositories;
 using AssessmentRiwiAPI.Services;
 using AssessmentRiwi.Services;
+using AssessmentRiwi.Seeders;
 
 var builder = WebApplication.CreateBuilder(args);
 Env.Load();
@@ -140,6 +141,9 @@ app.UseWelcomePage(
 app.UseAuthentication();
 app.UseAuthorization();
 //espacio para seeders
+builder.Services.AddScoped<UserSeeder>();
+
+
 
 app.MapControllers();
 app.Run();
