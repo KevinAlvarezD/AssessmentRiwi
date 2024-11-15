@@ -7,6 +7,8 @@ using AssessmentRiwi.Data;
 using System.Text;
 using System.Text.Json.Serialization;
 using AssessmentRiwi.Repositories;
+using AssessmentRiwiAPI.Services;
+using AssessmentRiwi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 Env.Load();
@@ -30,7 +32,12 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     });
 
-//espacio para instanciar repositorios
+
+ builder.Services.AddScoped<IUserRepository, UserServices>();
+ builder.Services.AddScoped<UserServices, UserServices>();
+ builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
+ builder.Services.AddScoped<IDoctorService, DoctorService>();
+ 
 
 
 var jwtIssuer = Environment.GetEnvironmentVariable("JWT_ISSUER");
@@ -57,7 +64,9 @@ builder.Services.AddCors(options =>
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
-    options.AddPolicy("Customer", policy => policy.RequireRole("Customer"));
+    options.AddPolicy("Doctor", policy => policy.RequireRole("Doctor"));
+    options.AddPolicy("Patient", policy => policy.RequireRole("Patient"));
+
 });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

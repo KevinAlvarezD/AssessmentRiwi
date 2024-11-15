@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using AssessmentRiwi.Models;
-// using AssessmentRiwi.Seeders;
+using AssessmentRiwi.Seeders;
 
 namespace AssessmentRiwi.Data;
 
@@ -21,7 +21,7 @@ public class ApplicationDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        // UserSeeder.Seed(modelBuilder);
+        UserSeeder.Seed(modelBuilder);
 
     }
 }

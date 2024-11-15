@@ -43,7 +43,9 @@ public class UserDTO
         if (value is string role)
         {
             if (role.Equals("admin", StringComparison.OrdinalIgnoreCase) ||
-                role.Equals("customer", StringComparison.OrdinalIgnoreCase))
+             role.Equals("doctor", StringComparison.OrdinalIgnoreCase) ||
+              role.Equals("patient", StringComparison.OrdinalIgnoreCase))
+
             {
                 return ValidationResult.Success;
             }
