@@ -47,24 +47,24 @@ public class PatientService : IPatientService
         });
     }
 
-    // public async Task<PatientDTO> AddAsync(PatientDTO patientDto)
-    // {
-    //     var patient = new Patient
-    //     {
-    //         UserId = patientDto.UserId,
-    //         DateOfBirth = patientDto.DateOfBirth,
-    //         MedicalHistory = patientDto.MedicalHistory
-    //     };
+    public async Task<PatientDTO> AddAsync(PatientDTO patientDto)
+    {
+        var patient = new Patient
+        {
+            UserId = patientDto.UserId,
+            DateOfBirth = patientDto.DateOfBirth,
+            MedicalHistory = patientDto.MedicalHistory
+        };
 
-    //     var addedPatient = await _patientRepository.AddAsync(patient);
+        var addedPatient = await _patientRepository.AddAsync(patient);
 
-    //     return new PatientDTO
-    //     {
-    //         UserId = addedPatient.UserId,
-    //         DateOfBirth = addedPatient.DateOfBirth,
-    //         MedicalHistory = addedPatient.MedicalHistory
-    //     };
-    // }
+        return new PatientDTO
+        {
+            UserId = addedPatient.UserId,
+            DateOfBirth = addedPatient.DateOfBirth,
+            MedicalHistory = addedPatient.MedicalHistory
+        };
+    }
 
     public async Task<PatientDTO> UpdateAsync(int patientId, PatientDTO patientDto)
     {

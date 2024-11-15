@@ -21,7 +21,7 @@ public class PatientRepository : IPatientRepository
     {
         return await _context.Patients
             .Include(p => p.User)   
-            .FirstOrDefaultAsync(p => p.PatientId == patientId);
+            .FirstOrDefaultAsync(p => p.Id == patientId);
     }
 
     public async Task<IEnumerable<Patient>> GetAllAsync()
