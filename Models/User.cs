@@ -19,15 +19,11 @@ public class User
     public string Name { get; set; }
     [Column("last_name")]
     public string LastName { get; set; }
-    [Column("address")]
-    public string Address { get; set; }
     [Column("password")]
     public string Password { get; set; }
     [Column("email")]
     public string Email { get; set; }
     [Column("phone")]
-    public string Phone { get; set; }
-    [Column("role")]
     public string Role { get; set; }
 
     public User()

@@ -32,8 +32,6 @@ namespace AssessmentRiwi.Controllers.V1.Users
 
             user.Name = updatedUser.Name;
             user.LastName = updatedUser.LastName;
-            user.Address = updatedUser.Address;
-            user.Phone = updatedUser.Phone;
             user.Email = updatedUser.Email;
             user.Password = updatedUser.Password = PasswordHasher.HashPassword(updatedUser.Password);
             user.Role = updatedUser.Role;
