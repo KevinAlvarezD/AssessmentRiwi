@@ -20,8 +20,7 @@ public class PatientRepository : IPatientRepository
     public async Task<Patient> GetByIdAsync(int patientId)
     {
         return await _context.Patients
-            .Include(p => p.User)  
-            // .Include(p => p.Appointments)  
+            .Include(p => p.User)   
             .FirstOrDefaultAsync(p => p.PatientId == patientId);
     }
 
@@ -29,7 +28,6 @@ public class PatientRepository : IPatientRepository
     {
         return await _context.Patients
             .Include(p => p.User)  
-            // .Include(p => p.Appointments)  
             .ToListAsync();
     }
 
