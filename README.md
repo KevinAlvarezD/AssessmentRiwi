@@ -1,4 +1,3 @@
-Aquí tienes un ejemplo de un `README.md` para tu proyecto "Assessment" de la clínica:
 
 ```markdown
 # Assessment - Clínica Privada
@@ -63,7 +62,7 @@ Sigue estos pasos para instalar y ejecutar el proyecto en tu entorno local:
    dotnet run
    ```
 
-   La API estará disponible en `http://localhost:5000`.
+   La API estará disponible en `http://localhost:5221`.
 
 ## Uso de la API
 
